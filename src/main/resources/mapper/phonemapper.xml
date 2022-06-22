@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.inxtes.nowsyncserver.mapper.PhoneMapper">
+    <select id="selectAllPhone" resultType="com.inxtes.nowsyncserver.model.Phone">
+        select * from phone
+    </select>
+    <select id="insertPhone" parameterType="com.inxtes.nowsyncserver.model.Phone" resultType="Integer">
+            insert into phone(phoneNumber,name)
+            values (#{phoneNumber},#{name})
+    </select>
+    <select id="selectPhoneByNumber" parameterType="String" resultType="com.inxtes.nowsyncserver.model.Phone">
+        select * from phone where phoneNumber = ${phoneNumber}
+    </select>
+</mapper>

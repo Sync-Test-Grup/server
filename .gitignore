@@ -34,3 +34,6 @@ out/
 
 # Test
 /src/test
+
+# Local config
+*-local.properties
