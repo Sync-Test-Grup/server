@@ -3,7 +3,7 @@ package com.inxtes.nowsyncserver.model;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Phone {
+public class Contacts {
     String phoneNumber;
     String name;
 

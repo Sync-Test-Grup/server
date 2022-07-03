@@ -13,10 +13,9 @@ import java.util.List;
 
 @Service
 public class MessageServiceImpl implements MessageService {
-    Logger logger = LoggerFactory.getLogger(getClass());
-
-
     private final MessageMapper mapper;
+
+    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     public MessageServiceImpl(MessageMapper mapper) {
@@ -29,13 +28,13 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public List<Message> insertMsg(List<Message> list) {
-        //插入失败列表
-        List<Message> unInsert = new ArrayList<>();
+    public List<Message> insertData(List<Message> list) {
 
+        List<Message> unInsert = new ArrayList<>();
         //储存数据
         for (Message msg : list) {
             try {
+                logger.error("这条短信的UUID为" + msg.getId());
                 mapper.insertMsg(msg);
             } catch (Exception e) {
 
@@ -47,6 +46,5 @@ public class MessageServiceImpl implements MessageService {
 
         return unInsert;
     }
-
 
 }

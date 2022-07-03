@@ -2,14 +2,30 @@ package com.inxtes.nowsyncserver.model;
 
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
-
 @Component
 public class Message {
     String senderNumber;
     String getterNumber;
     String content;
-    Date date;
+    String date;
+    String id;
+    int type;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
 
     public String getSenderNumber() {
         return senderNumber;
@@ -35,11 +51,11 @@ public class Message {
         this.content = content;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

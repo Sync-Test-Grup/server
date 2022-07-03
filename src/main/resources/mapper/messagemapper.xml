@@ -7,7 +7,7 @@
         select * from sms
     </select>
     <select id="insertMsg" resultType="Integer" parameterType="com.inxtes.nowsyncserver.model.Message">
-        insert into sms(senderNumber,getterNumber,content,date)
-        values(#{senderNumber},#{getterNumber},#{content},#{date})
+        insert into sms(senderNumber,getterNumber,content,date,id,type)
+        values(#{senderNumber},#{getterNumber},#{content},#{date},#{id},#{type})
     </select>
 </mapper>

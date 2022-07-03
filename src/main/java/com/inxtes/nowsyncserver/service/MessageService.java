@@ -4,8 +4,7 @@ import com.inxtes.nowsyncserver.model.Message;
 
 import java.util.List;
 
-public interface MessageService {
+public interface MessageService extends DataService<Message> {
     List<Message> getAllMsg();
 
-    List<Message> insertMsg(List<Message> list);
 }
